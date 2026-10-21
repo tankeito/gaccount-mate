@@ -2426,36 +2426,53 @@
             </div>
           </div>
 
-          <!-- 2.1.5, 2.1.6 & 2.1.7 -->
+          <!-- 2.1.5, 2.1.6 & 2.1.7 Restructured: Linear Cognitive Flow -->
           <div style="margin-top: 32px; border-top: 1px dashed var(--border); padding-top: 24px;">
-            <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 8px;">
-              2.1.5 & 2.1.6 & 2.1.7：保存属于您自己的全新 2FA 密钥并验证生效
-            </h4>
-            <div class="alert-box alert-warning" style="margin-top: 4px;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-              <div>
-                <strong>务必备份！</strong>步骤 2.1.5 中红框标出的一串字符是您的<strong>全新 2FA 密钥</strong>！请立即复制保存到安全记事本或添加到手机身份验证器 APP 中。
+            
+            <!-- Step 2.1.5: Acquire & Copy New Secret First -->
+            <div style="margin-bottom: 20px;">
+              <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;">
+                <h4 style="font-size: 1.05rem; font-weight: 700; margin: 0;">
+                  2.1.5：获取并复制属于您的全新 2FA 密钥文本
+                </h4>
+                <span class="step-action-tag tag-green">关键步骤 · 在此获取新密钥</span>
+              </div>
+
+              <div class="alert-box alert-warning" style="margin-top: 6px; margin-bottom: 12px;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                <div>
+                  <strong>务必备份！</strong>此时 Google 页面弹出的设置窗口中（见下方图 11），红框标出的一串英文字符就是您的<strong>全新 2FA 密钥</strong>！请选中并复制它。
+                </div>
+              </div>
+
+              <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 12px;">
+                对照下方图 11 红框位置，复制属于您的全新 2FA 密钥。复制好后，<strong>直接粘贴到紧随其下的【专属换绑辅助工具】中</strong>，系统将即刻为您生成第 2.1.6 步所需的 6 位验证码，并自动为您合成最新卡密！
+              </p>
+
+              <!-- Image 11: Displayed Prominently First -->
+              <div class="image-preview-card" style="max-width: 680px; margin: 12px auto;" onclick="openLightbox('docs/google_login%2311.png', '步骤 2.1.5：复制保存红框标出的全新 2FA 密钥')">
+                <img src="docs/google_login%2311.png" alt="保存新的2fa代码" loading="lazy" onerror="handleImgError(this, 'docs/google_login#11.png')">
+                <div class="image-caption-bar">
+                  <span>图 11 · 步骤 2.1.5：复制红框内的全新 2FA 密钥（复制后先不要关闭此窗口，稍后点下一个）</span>
+                  <span class="image-zoom-hint">点击看大图</span>
+                </div>
               </div>
             </div>
 
-            <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 12px;">
-              复制好新密钥后点击【下一个】，将这个<strong>全新密钥</strong>在接码工具（或下方提供的实时接码器）中生成的 6 位验证码填入并点击【验证】。验证通过后，将提示“刚补充”，代表更换大功告成！
-            </p>
-
-            <!-- Interactive New 2FA Verification & New Card Downloader -->
-            <div class="new-2fa-workspace">
+            <!-- Interactive New 2FA Verification & New Card Downloader (Directly Follows Step 2.1.5) -->
+            <div class="new-2fa-workspace" style="margin: 24px 0;">
               <div class="new-2fa-badge">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-                全新 2FA 实时接码 & 最新卡密存档器
+                步骤 2.1.5 ➔ 2.1.6 专属辅助工具
               </div>
-              <h4 class="new-2fa-title">不知道怎么验证步骤 2.1.6？在此一键接码并导出新卡密！</h4>
+              <h4 class="new-2fa-title">在此粘贴新密钥 ➔ 实时生成 2.1.6 验证码 ➔ 一键备份新卡密！</h4>
               <p class="new-2fa-desc">
-                当您进行到步骤 2.1.5 时，将 Google 页面给您的<strong>全新 2FA 密钥文本</strong>（图 11 红框所示）复制并粘贴到下方，系统将<strong>自动实时计算出 6 位验证码</strong>（用于步骤 2.1.6 校验），并为您自动合成最新卡密以供复制或下载保存。
+                将刚刚在<strong>上方图 11 红框</strong>复制出的全新 2FA 密钥粘贴到下方，系统将<strong>自动实时计算出 6 位验证码</strong>（用于下方步骤 2.1.6 校验），并为您自动合成最新卡密以供复制或下载保存。
               </p>
 
               <!-- Step 1: Input New Secret -->
               <div style="font-size: 0.85rem; font-weight: 700; color: #93c5fd; margin-bottom: 6px;">
-                ① 粘贴 Google 页面显示的【全新 2FA 密钥文本】（见下方图 11 红框）：
+                ① 粘贴上方图 11 红框显示的【全新 2FA 密钥文本】：
               </div>
               <div class="new-2fa-input-wrap">
                 <input 
@@ -2476,7 +2493,7 @@
               <div class="new-totp-display-card">
                 <div>
                   <div style="font-size: 0.78rem; color: #94a3b8; font-weight: 600; text-transform: uppercase;">
-                    ② 填入步骤 2.1.6 弹窗的实时验证码
+                    ② 填入下方步骤 2.1.6 弹窗的实时验证码
                   </div>
                   <div class="new-totp-val" id="newLiveTotpCode">------</div>
                   <div style="font-size: 0.8rem; color: #94a3b8;">
@@ -2500,7 +2517,7 @@
                   <span style="font-size: 0.75rem; color: #94a3b8;">标准格式：账号----密码----新2FA密钥</span>
                 </div>
                 <div class="new-card-preview-text" id="newCardPreviewText">
-                  等待输入全新 2FA 密钥...
+                  等待在上方输入全新 2FA 密钥...
                 </div>
                 <div class="new-card-actions">
                   <button class="btn-copy-new-card" id="btnCopyNewCard">
@@ -2515,31 +2532,37 @@
               </div>
             </div>
 
-            <div class="grid-three-col">
-              <div class="image-preview-card" onclick="openLightbox('docs/google_login%2311.png', '步骤 2.1.5：保存属于您的全新 2FA 代码')">
-                <img src="docs/google_login%2311.png" alt="保存新的2fa代码" loading="lazy" onerror="handleImgError(this, 'docs/google_login#11.png')">
-                <div class="image-caption-bar">
-                  <span>2.1.5 复制保存全新 2FA 密钥后点击下一个</span>
-                  <span class="image-zoom-hint">大图</span>
-                </div>
+            <!-- Step 2.1.6 & 2.1.7: Validate & Confirm -->
+            <div style="margin-top: 24px;">
+              <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;">
+                <h4 style="font-size: 1.05rem; font-weight: 700; margin: 0;">
+                  2.1.6 & 2.1.7：填入新验证码并确认生效
+                </h4>
+                <span class="step-action-tag tag-blue">验证确认 · 旧 2FA 作废</span>
               </div>
+              <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 12px;">
+                在 Google 步骤 2.1.5 窗口点击<strong>【下一个】</strong>进入步骤 2.1.6 校验弹窗。将上方工作台复制的 6 位验证码填入并点击<strong>【验证】</strong>。验证通过后，将回到身份验证器列表并显示<strong>“刚补充”</strong>，代表换绑大功告成，旧 2FA 已彻底作废！
+              </p>
 
-              <div class="image-preview-card" onclick="openLightbox('docs/google_login%2312.png', '步骤 2.1.6：输入新 2FA 生成的代码并点击验证')">
-                <img src="docs/google_login%2312.png" alt="验证新 2FA 代码" loading="lazy" onerror="handleImgError(this, 'docs/google_login#12.png')">
-                <div class="image-caption-bar">
-                  <span>2.1.6 输入新代码并点击【验证】</span>
-                  <span class="image-zoom-hint">大图</span>
+              <div class="dual-images-grid">
+                <div class="image-preview-card" onclick="openLightbox('docs/google_login%2312.png', '步骤 2.1.6：输入新 2FA 生成的代码并点击验证')">
+                  <img src="docs/google_login%2312.png" alt="验证新 2FA 代码" loading="lazy" onerror="handleImgError(this, 'docs/google_login#12.png')">
+                  <div class="image-caption-bar">
+                    <span>图 12 · 步骤 2.1.6：输入新代码并点击【验证】</span>
+                    <span class="image-zoom-hint">点击看大图</span>
+                  </div>
                 </div>
-              </div>
 
-              <div class="image-preview-card" onclick="openLightbox('docs/google_login%2313.png', '步骤 2.1.7：身份验证器修改成功')">
-                <img src="docs/google_login%2313.png" alt="更改成功确认" loading="lazy" onerror="handleImgError(this, 'docs/google_login#13.png')">
-                <div class="image-caption-bar">
-                  <span>2.1.7 成功生效！旧 2FA 已彻底作废</span>
-                  <span class="image-zoom-hint">大图</span>
+                <div class="image-preview-card" onclick="openLightbox('docs/google_login%2313.png', '步骤 2.1.7：身份验证器修改成功确认')">
+                  <img src="docs/google_login%2313.png" alt="更改成功确认" loading="lazy" onerror="handleImgError(this, 'docs/google_login#13.png')">
+                  <div class="image-caption-bar">
+                    <span>图 13 · 步骤 2.1.7：显示“刚补充”，代表成功生效！</span>
+                    <span class="image-zoom-hint">点击看大图</span>
+                  </div>
                 </div>
               </div>
             </div>
+
           </div>
         </article>
 
