@@ -2566,62 +2566,136 @@
           </div>
         </article>
 
-        <!-- Step 2.2, 2.3, 2.4 Quick Cards -->
-        <div class="grid-sub-cards">
-          <!-- 2.2 Password -->
-          <article class="step-card" style="margin-bottom: 0;">
-            <div class="step-card-header">
-              <div class="step-num" style="background: var(--primary-light);">2.2</div>
-              <div class="step-header-text">
-                <h3 class="step-title">修改登录密码</h3>
-                <span class="step-action-tag tag-blue">安全性与登录 → 密码</span>
-              </div>
+        <!-- Step 2.2: Password -->
+        <article class="step-card" style="margin-top: 24px;">
+          <div class="step-card-header">
+            <div class="step-num" style="background: var(--primary-light);">2.2</div>
+            <div class="step-header-text">
+              <h3 class="step-title">修改登录密码</h3>
+              <span class="step-action-tag tag-blue">安全性与登录 → 密码</span>
             </div>
-            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
-              在【安全性与登录】页面找到<strong>【密码】</strong>选项，点击进入后先输入原卡密中的密码进行身份校验，然后输入您自己规划的高强度新密码并确认保存。
-            </p>
-            <div class="alert-box alert-warning" style="margin: 12px 0 0; padding: 10px 14px; font-size: 0.84rem; line-height: 1.5;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-              <span><strong>若点击后弹出“我们无法确认是不是你”：</strong>切勿频繁狂点！此为 Google 新设备异地风控保护，严格按照上方<strong>【7天养号法则】</strong>正常使用 3~7 天建立信任后再来修改。</span>
-            </div>
-          </article>
+          </div>
+          <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 12px;">
+            在【安全性与登录】页面找到<strong>【密码】</strong>选项，点击进入后先输入原卡密中的密码进行身份校验，然后输入您自己规划的高强度新密码并确认保存。
+          </p>
+          <div class="alert-box alert-warning" style="margin: 0; padding: 10px 14px; font-size: 0.84rem; line-height: 1.5;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            <span><strong>若点击后弹出“我们无法确认是不是你”：</strong>切勿频繁狂点！此为 Google 新设备异地风控保护，严格按照下方<strong>【7天养号法则】</strong>正常使用 3~7 天建立信任后再来修改。</span>
+          </div>
+        </article>
 
-          <!-- 2.3 Phone -->
-          <article class="step-card" style="margin-bottom: 0;">
-            <div class="step-card-header">
-              <div class="step-num" style="background: var(--primary-light);">2.3</div>
-              <div class="step-header-text">
-                <h3 class="step-title">修改/绑定恢复手机号</h3>
-                <span class="step-action-tag tag-blue">安全性与登录 → 恢复电话</span>
-              </div>
+        <!-- Step 2.3: Recovery Phone (Detailed 5-step with Screenshots) -->
+        <article class="step-card">
+          <div class="step-card-header">
+            <div class="step-num" style="background: var(--primary-light);">2.3</div>
+            <div class="step-header-text">
+              <h3 class="step-title">绑定/修改恢复手机号（5 步完整图解实操）</h3>
+              <p class="step-instruction">
+                绑定您自己的国内手机号作为核心安全恢复途径，一旦遇到异地登录校验或密码找回，可随时通过接收短信验证码安全验证。
+              </p>
+              <span class="step-action-tag tag-green">支持中国大陆 (+86) 国内手机号 · 实测秒接验证码</span>
             </div>
-            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
-              点击<strong>【恢复电话】</strong>，地区选择【中国 +86】，输入您自己的常用手机号，接收短信验证码后完成绑定，用于后续密码找回。
-            </p>
-            <div class="alert-box alert-warning" style="margin: 12px 0 0; padding: 10px 14px; font-size: 0.84rem; line-height: 1.5;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-              <span><strong>若点击后弹出“我们无法确认是不是你”：</strong>手机号同样属于核心敏感凭证，触发拦截时切勿频繁重试，按照<strong>【7天养号法则】</strong>正常使用 3~7 天建立信任后再来绑定。</span>
-            </div>
-          </article>
+          </div>
 
-          <!-- 2.4 Recovery Email -->
-          <article class="step-card" style="margin-bottom: 0;">
-            <div class="step-card-header">
-              <div class="step-num" style="background: var(--primary-light);">2.4</div>
-              <div class="step-header-text">
-                <h3 class="step-title">修改/绑定恢复辅助邮箱</h3>
-                <span class="step-action-tag tag-blue">安全性与登录 → 恢复邮件</span>
+          <div class="alert-box alert-info" style="margin-top: 4px; margin-bottom: 18px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+            <div>
+              <strong>全流程概览：</strong>进入安全性 ➔ 点击 Recovery phone ➔ 输入当前密码校验 ➔ 点击添加按钮 ➔ 国家选择中国 (+86) 填入手机号 ➔ 确认号码并保存。全程操作顺畅，以下为 1:1 分步实操截图：
+            </div>
+          </div>
+
+          <!-- Stage 1: Steps 2.3.1 & 2.3.2 -->
+          <div style="margin-bottom: 24px;">
+            <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 8px;">
+              2.3.1 & 2.3.2：找到恢复电话入口并完成安全身份验证
+            </h4>
+            <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 12px; line-height: 1.6;">
+              ① 在 Google 账户页面的<strong>【安全性】</strong>列表中，找到<strong>【Recovery phone】</strong>（恢复电话）条目，点击进入（见下方图 1 红框标示）。<br>
+              ② 此时 Google 出于安全考量会弹出 <strong>Verify it's you</strong>（验证是您本人）界面，输入当前账号的<strong>登录密码</strong>，点击右下角<strong>【Next】</strong>（见下方图 2）。
+            </p>
+
+            <div class="dual-images-grid">
+              <div class="image-preview-card" onclick="openLightbox('docs/phone_bind%2301.png', '步骤 2.3.1：在安全性页面点击 Recovery phone / 恢复电话')">
+                <img src="docs/phone_bind%2301.png" alt="Recovery phone 恢复电话入口" loading="lazy" onerror="handleImgError(this, 'docs/phone_bind#01.png')">
+                <div class="image-caption-bar">
+                  <span>图 1 · 步骤 2.3.1：点击【Recovery phone / 恢复电话】</span>
+                  <span class="image-zoom-hint">点击看大图</span>
+                </div>
+              </div>
+
+              <div class="image-preview-card" onclick="openLightbox('docs/phone_bind%2302.png', '步骤 2.3.2：验证身份，输入当前登录密码点击 Next')">
+                <img src="docs/phone_bind%2302.png" alt="输入密码验证身份" loading="lazy" onerror="handleImgError(this, 'docs/phone_bind#02.png')">
+                <div class="image-caption-bar">
+                  <span>图 2 · 步骤 2.3.2：输入密码验证身份并点击【Next】</span>
+                  <span class="image-zoom-hint">点击看大图</span>
+                </div>
               </div>
             </div>
-            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
-              点击<strong>【恢复电子邮件】</strong>，输入您日常主力邮箱（QQ邮箱、163邮箱等），查收邮件中的 6 位验证码填入确认，确保通知第一时间送达。
+          </div>
+
+          <!-- Stage 2: Steps 2.3.3, 2.3.4 & 2.3.5 -->
+          <div style="margin-top: 24px; border-top: 1px dashed var(--border); padding-top: 20px;">
+            <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 8px;">
+              2.3.3 ~ 2.3.5：添加中国 (+86) 手机号并确认保存
+            </h4>
+            <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 12px; line-height: 1.6;">
+              ③ 进入恢复电话详情页后，点击红框标出的<strong>【Add recovery phone】</strong>（添加恢复电话）按钮（见下方图 3）。<br>
+              ④ 弹出的“Add a phone number”窗口中，国旗下拉菜单选择<strong>【中国 (+86)】</strong>，输入框填入您自己的常用国内手机号（移动/联通/电信均可），点击右下角<strong>【Next】</strong>（见下方图 4）。<br>
+              ⑤ 弹出“Confirm your phone number”确认窗口，核实显示的 <code>+86 1xxxxxxxxx</code> 手机号码准确无误后，点击右下角<strong>【Save】</strong>（保存）即可完成绑定（见下方图 5）。
             </p>
-            <div class="alert-box alert-warning" style="margin: 12px 0 0; padding: 10px 14px; font-size: 0.84rem; line-height: 1.5;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-              <span><strong>若点击后弹出“我们无法确认是不是你”：</strong>辅助邮箱同样属于高危修改项，触发拦截时切勿反复尝试，严格执行<strong>【7天养号法则】</strong>，待设备成为受信任设备后即可顺利修改。</span>
+
+            <div class="grid-three-col">
+              <div class="image-preview-card" onclick="openLightbox('docs/phone_bind%2303.png', '步骤 2.3.3：点击 Add recovery phone 添加按钮')">
+                <img src="docs/phone_bind%2303.png" alt="点击 Add recovery phone" loading="lazy" onerror="handleImgError(this, 'docs/phone_bind#03.png')">
+                <div class="image-caption-bar">
+                  <span>图 3 · 步骤 2.3.3：点击【Add recovery phone】</span>
+                  <span class="image-zoom-hint">点击看大图</span>
+                </div>
+              </div>
+
+              <div class="image-preview-card" onclick="openLightbox('docs/phone_bind%2304.png', '步骤 2.3.4：选择中国 (+86) 并输入手机号码')">
+                <img src="docs/phone_bind%2304.png" alt="选择中国(+86)填入手机号" loading="lazy" onerror="handleImgError(this, 'docs/phone_bind#04.png')">
+                <div class="image-caption-bar">
+                  <span>图 4 · 步骤 2.3.4：选中国 (+86) 输入手机号</span>
+                  <span class="image-zoom-hint">点击看大图</span>
+                </div>
+              </div>
+
+              <div class="image-preview-card" onclick="openLightbox('docs/phone_bind%2305.png', '步骤 2.3.5：核实手机号码并点击 Save 保存')">
+                <img src="docs/phone_bind%2305.png" alt="确认号码并保存" loading="lazy" onerror="handleImgError(this, 'docs/phone_bind#05.png')">
+                <div class="image-caption-bar">
+                  <span>图 5 · 步骤 2.3.5：核对号码无误点击【Save】</span>
+                  <span class="image-zoom-hint">点击看大图</span>
+                </div>
+              </div>
             </div>
-          </article>
-        </div>
+          </div>
+
+          <div class="alert-box alert-warning" style="margin-top: 20px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            <div>
+              <strong>风控避坑提示：</strong>若点击进入时弹出“Google 无法确认是不是你”：请立即停止频繁尝试！此为 Google 新环境设备异地风控防护。请严格遵循下方的<strong>【7天养号法则】</strong>，在固定网络环境与设备上正常登录使用 3~7 天建立设备信任后再来绑定即可顺利通过。
+            </div>
+          </div>
+        </article>
+
+        <!-- Step 2.4: Recovery Email -->
+        <article class="step-card" style="margin-bottom: 0;">
+          <div class="step-card-header">
+            <div class="step-num" style="background: var(--primary-light);">2.4</div>
+            <div class="step-header-text">
+              <h3 class="step-title">修改/绑定恢复辅助邮箱</h3>
+              <span class="step-action-tag tag-blue">安全性与登录 → 恢复邮件</span>
+            </div>
+          </div>
+          <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 12px;">
+            点击<strong>【恢复电子邮件】</strong>，输入您日常主力邮箱（QQ邮箱、163邮箱等），查收邮件中的 6 位验证码填入确认，确保通知第一时间送达。
+          </p>
+          <div class="alert-box alert-warning" style="margin: 0; padding: 10px 14px; font-size: 0.84rem; line-height: 1.5;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            <span><strong>若点击后弹出“我们无法确认是不是你”：</strong>辅助邮箱同样属于高危修改项，触发拦截时切勿反复尝试，严格执行下方的<strong>【7天养号法则】</strong>，待设备成为受信任设备后即可顺利修改。</span>
+          </div>
+        </article>
       </section>
 
 
