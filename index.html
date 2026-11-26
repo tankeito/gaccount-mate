@@ -3223,51 +3223,86 @@
           </div>
         </article>
 
-        <!-- Step 2.4: Recovery Email (Detailed with Screenshots) -->
+        <!-- Step 2.4: Recovery Email (Detailed 4-step with Screenshots) -->
         <article class="step-card" style="margin-bottom: 0;">
           <div class="step-card-header">
             <div class="step-num" style="background: var(--primary-light);">2.4</div>
             <div class="step-header-text">
-              <h3 class="step-title">修改/绑定恢复辅助邮箱（图文实操）</h3>
+              <h3 class="step-title">修改/绑定并验证恢复辅助邮箱（完整图文实操）</h3>
               <p class="step-instruction">
-                将辅助邮箱更新为您自己的常用邮箱（如 QQ 邮箱、163 邮箱、Outlook 等），用于接收安全通知及找回账号验证。
+                将辅助邮箱更新为您自己的常用邮箱（如 QQ 邮箱、163 邮箱、Outlook 等）并完成验证码激活，用于接收安全通知及找回账号验证。
               </p>
               <span class="step-action-tag tag-blue">安全性与登录 → 辅助邮箱 / 恢复邮件</span>
             </div>
           </div>
 
-          <div class="alert-box alert-info" style="margin-top: 4px; margin-bottom: 16px;">
+          <div class="alert-box alert-info" style="margin-top: 4px; margin-bottom: 18px;">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
             <div>
-              <strong>操作提示：</strong>若账号内已存在原辅助邮箱，直接点击右侧铅笔图标替换为自己的邮箱即可；若页面弹出密码校验提示，输入当前登录密码即可进入修改页。
+              <strong>操作提示：</strong>修改辅助邮箱分为<strong>“替换新邮箱地址”</strong>和<strong>“点击验证辅助邮箱完成激活”</strong>两步，若途中弹出密码校验窗口，输入当前登录密码即可继续。
             </div>
           </div>
 
-          <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 14px;">
-            ① 在【安全性与登录】页面点击<strong>【辅助邮箱 / 恢复电子邮件】</strong>进入详情页，点击现有邮箱右侧红框标注的<strong>【✏️ 修改图标】</strong>（见下方图 1 箭头位置）。<br>
-            ② 在弹出的“设置辅助邮箱”窗口中，输入您自己的常用邮箱地址并点击<strong>【保存】</strong>（见下方图 2）。<br>
-            ③ 打开您刚刚填写的邮箱查收 Google 发送的 <strong>6 位验证码</strong>，回到页面填入确认即可绑定生效！
-          </p>
+          <!-- Stage 1: Modify & Save New Email -->
+          <div style="margin-bottom: 24px;">
+            <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 8px;">
+              2.4.1 & 2.4.2：修改并保存新的辅助邮箱地址
+            </h4>
+            <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
+              ① 在【安全性与登录】页面点击<strong>【辅助邮箱 / 恢复电子邮件】</strong>进入详情页，点击现有邮箱右侧红框标注的<strong>【✏️ 修改图标】</strong>（见下方图 1 箭头位置）。<br>
+              ② 在弹出的“设置辅助邮箱”窗口中，输入您自己的常用邮箱地址并点击<strong>【保存】</strong>（见下方图 2）。
+            </p>
 
-          <div class="dual-images-grid">
-            <div class="image-preview-card" onclick="openLightbox('docs/email_bind%2301.png', '步骤 2.4.1：点击辅助邮箱右侧铅笔修改图标')">
-              <img src="docs/email_bind%2301.png" alt="点击辅助邮箱修改按钮" loading="lazy" onerror="handleImgError(this, 'docs/email_bind#01.png')">
-              <div class="image-caption-bar">
-                <span>图 1 · 点击辅助邮箱右侧【✏️ 修改】图标</span>
-                <span class="image-zoom-hint">点击看大图</span>
+            <div class="dual-images-grid">
+              <div class="image-preview-card" onclick="openLightbox('docs/email_bind%2301.png', '步骤 2.4.1：点击辅助邮箱右侧铅笔修改图标')">
+                <img src="docs/email_bind%2301.png" alt="点击辅助邮箱修改按钮" loading="lazy" onerror="handleImgError(this, 'docs/email_bind#01.png')">
+                <div class="image-caption-bar">
+                  <span>图 1 · 点击辅助邮箱右侧【✏️ 修改】图标</span>
+                  <span class="image-zoom-hint">点击看大图</span>
+                </div>
               </div>
-            </div>
 
-            <div class="image-preview-card" onclick="openLightbox('docs/email_bind%2302.png', '步骤 2.4.2：输入您自己的邮箱地址并点击保存验证')">
-              <img src="docs/email_bind%2302.png" alt="输入新的辅助邮箱地址并保存" loading="lazy" onerror="handleImgError(this, 'docs/email_bind#02.png')">
-              <div class="image-caption-bar">
-                <span>图 2 · 填入您的邮箱点击【保存】并查收验证码</span>
-                <span class="image-zoom-hint">点击看大图</span>
+              <div class="image-preview-card" onclick="openLightbox('docs/email_bind%2302.png', '步骤 2.4.2：输入您自己的邮箱地址并点击保存')">
+                <img src="docs/email_bind%2302.png" alt="输入新的辅助邮箱地址并保存" loading="lazy" onerror="handleImgError(this, 'docs/email_bind#02.png')">
+                <div class="image-caption-bar">
+                  <span>图 2 · 填入您的邮箱并点击【保存】</span>
+                  <span class="image-zoom-hint">点击看大图</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="alert-box alert-warning" style="margin: 18px 0 0; padding: 12px 16px; font-size: 0.86rem; line-height: 1.55;">
+          <!-- Stage 2: Verify Recovery Email -->
+          <div style="margin-top: 24px; border-top: 1px dashed var(--border); padding-top: 20px;">
+            <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 8px;">
+              2.4.3 & 2.4.4：点击【验证辅助邮箱】完成验证码激活
+            </h4>
+            <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
+              ③ 保存后回到详情页，点击邮箱下方的蓝色<strong>【验证辅助邮箱】</strong>链接（位置见上方图 1 左下方）。<br>
+              ④ 弹出“验证您的辅助邮箱”窗口（见下方图 3），点击蓝色<strong>【请让系统发送新的验证码】</strong>链接获取最新邮件验证码。<br>
+              ⑤ 前往您的辅助邮箱收件箱查收 <strong>6 位数字验证码</strong>，填入输入框并点击<strong>【验证】</strong>。页面显示“<strong>上次更新时间：刚刚</strong>”即代表验证成功（见下方图 4）！
+            </p>
+
+            <div class="dual-images-grid">
+              <div class="image-preview-card" onclick="openLightbox('docs/email_bind%2303.png', '步骤 2.4.3：点击请让系统发送新的验证码，收到后填入验证码并验证')">
+                <img src="docs/email_bind%2303.png" alt="验证辅助邮箱弹窗" loading="lazy" onerror="handleImgError(this, 'docs/email_bind#03.png')">
+                <div class="image-caption-bar">
+                  <span>图 3 · 点【请让系统发送新的验证码】后输入验证</span>
+                  <span class="image-zoom-hint">点击看大图</span>
+                </div>
+              </div>
+
+              <div class="image-preview-card" onclick="openLightbox('docs/email_bind%2304.png', '步骤 2.4.4：辅助邮箱验证成功，显示上次更新时间：刚刚')">
+                <img src="docs/email_bind%2304.png" alt="辅助邮箱验证成功状态" loading="lazy" onerror="handleImgError(this, 'docs/email_bind#04.png')">
+                <div class="image-caption-bar">
+                  <span>图 4 · 验证成功！显示“上次更新时间：刚刚”</span>
+                  <span class="image-zoom-hint">点击看大图</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="alert-box alert-warning" style="margin: 20px 0 0; padding: 12px 16px; font-size: 0.86rem; line-height: 1.55;">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
             <span><strong>风控提示：</strong>辅助邮箱属于核心安全凭据，若点击后弹出“我们无法确认是不是你”，切勿反复重试，严格执行下方<strong>【3~7 天日常养护法则】</strong>待设备被标记为受信任设备后再来修改。注：更改后的一周内，Google 仍可能提示可选择发送到原辅助邮箱，此为官方正常过渡安全机制，一周后即完全切换。</span>
           </div>
