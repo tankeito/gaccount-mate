@@ -63,6 +63,8 @@ gaccount-mate/
 │   ├── phone_bind#03.png   # 步骤 2.3.3: 点击 Add recovery phone 添加按钮
 │   ├── phone_bind#04.png   # 步骤 2.3.4: 选择中国 (+86) 并输入国内手机号
 │   ├── phone_bind#05.png   # 步骤 2.3.5: 核对号码无误点击 Save 保存绑定
+│   ├── email_bind#01.png   # 步骤 2.4.1: 点击辅助邮箱右侧修改图标
+│   ├── email_bind#02.png   # 步骤 2.4.2: 输入新辅助邮箱地址并点击保存
 │   ├── risk_qr#01.png      # 登录风控症状 1: 电脑端强制要求手机扫描二维码
 │   ├── risk_qr#02.png      # 登录风控症状 2: 手机扫码后提示我们无法验证您的信息
 │   └── risk_qr#03.png      # 解封恢复图 3: 等3~5天换住宅IP重登后选择扫描二维码通过
