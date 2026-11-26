@@ -1197,6 +1197,182 @@
       margin: 0;
     }
 
+    /* Anchor scroll offset so fixed header never covers headings */
+    section[id],
+    div[id] {
+      scroll-margin-top: 80px;
+    }
+
+    /* Risk Control: Login QR Block & Self-Unlock Guide */
+    .risk-unblock-card {
+      margin-top: 28px;
+      background: var(--card-bg);
+      border: 2px solid #ef4444;
+      border-radius: var(--radius-lg);
+      padding: 26px 28px;
+      box-shadow: 0 8px 24px rgba(239, 68, 68, 0.08);
+    }
+    body.dark .risk-unblock-card {
+      border-color: #dc2626;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+    .risk-unblock-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    .risk-unblock-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      background: #fee2e2;
+      color: #dc2626;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+    body.dark .risk-unblock-icon {
+      background: rgba(220, 38, 38, 0.2);
+      color: #f87171;
+    }
+    .risk-block-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      margin-bottom: 10px;
+    }
+    .risk-label-error {
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+    .risk-label-success {
+      background: #dcfce7;
+      color: #15803d;
+    }
+    body.dark .risk-label-error {
+      background: rgba(239, 68, 68, 0.2);
+      color: #fca5a5;
+    }
+    body.dark .risk-label-success {
+      background: rgba(34, 197, 94, 0.2);
+      color: #86efac;
+    }
+    .risk-stage-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin-bottom: 18px;
+    }
+    .risk-stage-box.success-stage {
+      border: 1.5px solid #22c55e;
+      background: linear-gradient(180deg, rgba(34, 197, 94, 0.05) 0%, var(--bg) 100%);
+      margin-bottom: 0;
+    }
+    .risk-img-frame {
+      height: 290px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f1f5f9;
+      padding: 10px;
+      overflow: hidden;
+    }
+    body.dark .risk-img-frame {
+      background: #0f172a;
+    }
+    .risk-img-frame img {
+      max-height: 100%;
+      max-width: 100%;
+      width: auto !important;
+      height: auto !important;
+      object-fit: contain;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+    .risk-steps-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 14px 0 18px;
+    }
+    @media (max-width: 900px) {
+      .risk-steps-list {
+        grid-template-columns: 1fr;
+      }
+    }
+    .risk-step-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .risk-step-num {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+    .risk-step-item h5 {
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0;
+      line-height: 1.4;
+    }
+    .risk-step-item p {
+      font-size: 0.86rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin: 0;
+    }
+    .risk-step-item p strong {
+      color: var(--text);
+    }
+    .inline-risk-jump {
+      margin-top: 14px;
+      padding: 12px 16px;
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      border-radius: var(--radius-md);
+      font-size: 0.88rem;
+      color: #9a3412;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    body.dark .inline-risk-jump {
+      background: rgba(154, 52, 18, 0.25);
+      border-color: #c2410c;
+      color: #fdba74;
+    }
+    .inline-risk-jump a {
+      color: #ea580c;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+      padding: 4px 10px;
+      background: rgba(234, 88, 12, 0.12);
+      border-radius: var(--radius-sm);
+    }
+    .inline-risk-jump a:hover {
+      background: rgba(234, 88, 12, 0.2);
+    }
+
     /* Warranty & Disclaimer Box */
     .care-disclaimer-box {
       margin-top: 24px;
@@ -1589,7 +1765,7 @@
     }
     .faq-card.open .faq-answer {
       padding: 0 22px 18px;
-      max-height: 300px;
+      max-height: 800px;
     }
 
     /* Sticky Bottom / Floating Mini Toolbar */
@@ -1860,12 +2036,22 @@
 
       .tool-box,
       .step-card,
-      .explain-card {
+      .explain-card,
+      .risk-unblock-card,
+      .care-formula-card,
+      .care-timeline-wrap {
         padding: 16px 14px !important;
         border-radius: var(--radius-md) !important;
         margin-bottom: 16px !important;
         width: 100% !important;
         max-width: 100% !important;
+      }
+
+      .risk-stage-box {
+        padding: 14px 12px !important;
+      }
+      .risk-img-frame {
+        height: 230px !important;
       }
 
       .tool-title {
@@ -2510,6 +2696,11 @@
               </div>
             </div>
           </div>
+
+          <div class="inline-risk-jump">
+            <span>⚠️ <strong>遇到登录时弹出“使用您的手机扫描二维码”，但手机扫码提示“我们无法验证您的信息”？</strong></span>
+            <a href="#riskQrGuide">查看 3~5 天住宅 IP 解封教程 ➔</a>
+          </div>
         </article>
 
         <!-- Step 1.5 -->
@@ -2672,6 +2863,10 @@
                 <span><strong>3~7 天后顺利完成全部安全配置：</strong>经过 3~7 天的稳定使用，Google 系统会自动将您当前的设备与网络识别为“受信任设备（Trusted Device）”。届时再去修改密码、2FA、绑定手机号或辅助邮箱即可顺利通过！</span>
               </li>
             </ul>
+            <div class="inline-risk-jump">
+              <span>💡 <strong>情况区分：</strong>如果您是在<strong>登录账号时</strong>就弹出二维码，且手机扫码提示“我们无法验证您的信息”无法进入：</span>
+              <a href="#riskQrGuide">前往【登录扫码风控解封指南】➔</a>
+            </div>
           </div>
         </div>
 
@@ -3197,7 +3392,102 @@
           </div>
         </div>
 
-        <!-- 4. Security & Usage Reminder Notice -->
+        <!-- 4. Special Troubleshooting: Login QR Code Block & Self-Unlock Guide -->
+        <div id="riskQrGuide" class="risk-unblock-card">
+          <div class="risk-unblock-header">
+            <div class="risk-unblock-icon">📱</div>
+            <div>
+              <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <h3 style="font-size: 1.18rem; font-weight: 800; color: var(--text); margin: 0;">
+                  特殊风控排错：登录后要求手机扫码，但扫码却提示“我们无法验证您的信息”？
+                </h3>
+                <span class="step-action-tag tag-red" style="font-size: 0.76rem;">实测可解 · 切勿频繁重试</span>
+              </div>
+              <p style="font-size: 0.92rem; color: var(--text-secondary); margin-top: 6px; line-height: 1.6;">
+                如果您在登录账号时直接触发拦截，遇到下方<strong>“图 1 ➔ 图 2”</strong>的扫码死循环情况，说明当前使用的代理 IP 被 Google 临时标记了风险。<strong>请立即停止登录，按照下方 3 步方案即可顺利解除！</strong>
+              </p>
+            </div>
+          </div>
+
+          <!-- Stage A: Symptoms Comparison -->
+          <div class="risk-stage-box">
+            <span class="risk-block-label risk-label-error">❌ 第一步：核对异常症状（图 1 ➔ 图 2）</span>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.65; margin-bottom: 14px;">
+              <strong>1. 电脑端拦截（图 1）：</strong>登录后直接弹出“验证您的信息后才能继续”，右侧仅提供一个二维码要求<strong>使用您的手机扫描二维码</strong>。<br>
+              <strong>2. 手机端报错（图 2）：</strong>手机扫码打开后，页面却提示“<strong>我们无法验证您的信息</strong>（您的活动情况与平常略有不同）”，点击“重试”或“试试其他方式”均无法通过验证。
+            </p>
+
+            <div class="dual-images-grid" style="margin-top: 12px;">
+              <div class="image-preview-card" onclick="openLightbox('docs/risk_qr%2301.png', '异常症状图 1：登录后强制要求使用手机扫描二维码')">
+                <div class="risk-img-frame">
+                  <img src="docs/risk_qr%2301.png" alt="登录要求手机扫描二维码" loading="lazy" onerror="handleImgError(this, 'docs/risk_qr#01.png')">
+                </div>
+                <div class="image-caption-bar">
+                  <span style="color: #dc2626; font-weight: 600;">症状图 1 · 登录后强制要求手机扫码</span>
+                  <span class="image-zoom-hint">点击看大图</span>
+                </div>
+              </div>
+
+              <div class="image-preview-card" onclick="openLightbox('docs/risk_qr%2302.png', '异常症状图 2：手机扫码后提示我们无法验证您的信息')">
+                <div class="risk-img-frame">
+                  <img src="docs/risk_qr%2302.png" alt="手机扫码后提示无法验证您的信息" loading="lazy" onerror="handleImgError(this, 'docs/risk_qr#02.png')">
+                </div>
+                <div class="image-caption-bar">
+                  <span style="color: #dc2626; font-weight: 600;">症状图 2 · 手机扫码后无法验证（卡死）</span>
+                  <span class="image-zoom-hint">点击看大图</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stage B: 3-Step Actionable Resolution -->
+          <div class="risk-stage-box" style="background: rgba(37, 99, 235, 0.04); border-color: rgba(37, 99, 235, 0.25);">
+            <span class="risk-block-label tag-blue" style="margin-bottom: 6px;">🛠️ 第二步：实测有效的 3 步解封方案</span>
+            <div class="risk-steps-list">
+              <div class="risk-step-item">
+                <span class="risk-step-num">⏳ 第 1 步 · 冷静等待</span>
+                <h5>停止操作，静置等待 3 ~ 5 天</h5>
+                <p>
+                  出现图 2 提示后，<strong>请立即关闭网页停止重试</strong>。切勿每天连续反复尝试登录或频繁扫码，耐心静置 <strong>3 ~ 5 天</strong>让临时风险标记自然降温。
+                </p>
+              </div>
+              <div class="risk-step-item">
+                <span class="risk-step-num">🏡 第 2 步 · 更换干净网络</span>
+                <h5>换用干净的“住宅 IP”重新登录</h5>
+                <p>
+                  等满 3 ~ 5 天后，<strong>放弃之前触发异常的共享/机房 IP</strong>，更换一条干净纯净的<strong>住宅 IP（Residential IP）</strong>，再重新打开浏览器登录账号。
+                </p>
+              </div>
+              <div class="risk-step-item">
+                <span class="risk-step-num">✅ 第 3 步 · 选择扫码通过</span>
+                <h5>选择【扫描二维码】，扫码即可登录</h5>
+                <p>
+                  换用干净住宅 IP 重新登录后，页面将<strong>不再出现图 1 的死锁提示</strong>，而是直接显示下方<strong>图 3（选择验证方式）</strong>。点击第一项<strong>【扫描二维码】</strong>并用手机扫码，即可顺利通过并成功登录！
+                </p>
+              </div>
+            </div>
+
+            <!-- Stage C: Recovery Result Screenshot -->
+            <div class="risk-stage-box success-stage">
+              <span class="risk-block-label risk-label-success">✅ 第三步：解封恢复后的登录界面示范（图 3）</span>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.65; margin-bottom: 12px;">
+                等待 3~5 天并更换干净住宅 IP 重新登录后，系统页面将如<strong>图 3</strong> 所示出现<strong>“选择一种方法进行验证”</strong>。此时直接选择<strong>【扫描二维码】</strong>，按提示用手机扫码确认即可顺利进入账号！
+              </p>
+
+              <div class="image-preview-card" style="max-width: 720px; margin: 0 auto;" onclick="openLightbox('docs/risk_qr%2303.png', '恢复图 3：更换住宅 IP 重新登录后直接出现方法选择，选择扫描二维码即可成功登录')">
+                <div class="risk-img-frame" style="height: 260px;">
+                  <img src="docs/risk_qr%2303.png" alt="选择扫描二维码验证方式后成功登录" loading="lazy" onerror="handleImgError(this, 'docs/risk_qr#03.png')">
+                </div>
+                <div class="image-caption-bar">
+                  <span style="color: #15803d; font-weight: 600;">恢复图 3 · 出现选项后选择【扫描二维码】，手机扫码即成功登录</span>
+                  <span class="image-zoom-hint">点击看大图</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Security & Usage Reminder Notice -->
         <div class="care-disclaimer-box">
           <div class="care-disclaimer-header">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
@@ -3279,6 +3569,16 @@
             </div>
             <div class="faq-answer">
               请放心，<strong>这不是账号被封，账号完全健康正常！</strong>这属于 Google 官方针对新设备首次登录触发的“安全保护冷静期”。因为您的设备、浏览器指纹、网络 IP 与过往常用环境存在差异，Google 会将【修改密码、修改2FA、修改恢复电话、修改恢复邮箱】统一定义为<strong>核心安全凭据变更</strong>，因此刚登录的几天内进行任一操作均可能被拦截。<br><br><strong>正确应对方案：</strong>切勿频繁狂点重试！保持当前设备与相对固定的单一地区网络 IP，每天正常登录 Gmail 查阅邮件、用 Google 搜索或看几分钟 YouTube 视频正常使用。一般经过 3~7 天后，Google 就会自动将您的当前设备标记为受信任设备，届时即可直接顺利修改密码、2FA、手机号及辅助邮箱。
+            </div>
+          </div>
+
+          <div class="faq-card">
+            <div class="faq-question">
+              <span>Q7：登录时强制要求手机扫码验证，但手机扫码后却提示“我们无法验证您的信息”无法通过怎么办？</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+            <div class="faq-answer">
+              这是由于当前代理节点 IP 被 Google 临时风控拦截，切勿当天频繁尝试登录。<strong>实测有效的解封步骤：</strong>① 立即停止操作，静置等待 <strong>3~5 天</strong>；② 换用一条<strong>干净纯净的住宅 IP（Residential IP）</strong>重新输入账号密码登录；③ 此时页面将变为“选择一种方法进行验证”（不再死锁），直接选择<strong>【扫描二维码】</strong>并用手机扫码即可成功登录！详细图文对照请点击查看：<a href="#riskQrGuide" style="color:var(--primary); font-weight:600;">【登录扫码风控排错指南】</a>。
             </div>
           </div>
         </div>
