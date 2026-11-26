@@ -1277,12 +1277,12 @@
       margin-bottom: 0;
     }
     .risk-img-frame {
-      height: 290px;
+      height: 270px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #f1f5f9;
-      padding: 10px;
+      background: #f8fafc;
+      padding: 8px;
       overflow: hidden;
     }
     body.dark .risk-img-frame {
@@ -1294,6 +1294,8 @@
       width: auto !important;
       height: auto !important;
       object-fit: contain;
+      padding: 0 !important;
+      background: transparent !important;
       border-radius: 6px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     }
@@ -1611,7 +1613,7 @@
     }
 
     .image-caption-bar {
-      padding: 10px 16px;
+      padding: 10px 14px;
       background: var(--card-bg);
       border-top: 1px solid var(--border);
       font-size: 0.85rem;
@@ -1619,6 +1621,13 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 12px;
+      text-align: left;
+      line-height: 1.5;
+    }
+    .image-caption-bar > span:first-child {
+      flex: 1;
+      min-width: 0;
     }
 
     .image-zoom-hint {
@@ -1626,8 +1635,13 @@
       align-items: center;
       gap: 4px;
       color: var(--primary);
-      font-weight: 500;
-      font-size: 0.8rem;
+      font-weight: 600;
+      font-size: 0.76rem;
+      white-space: nowrap;
+      flex-shrink: 0;
+      padding: 3px 10px;
+      background: var(--primary-light);
+      border-radius: var(--radius-full);
     }
 
     /* Dual Images Grid */
@@ -2049,9 +2063,26 @@
 
       .risk-stage-box {
         padding: 14px 12px !important;
+        margin-bottom: 14px !important;
       }
       .risk-img-frame {
-        height: 230px !important;
+        height: auto !important;
+        padding: 6px !important;
+      }
+      .risk-img-frame img {
+        max-height: 320px !important;
+      }
+      .image-preview-card img {
+        padding: 4px !important;
+      }
+      .image-caption-bar {
+        padding: 10px 12px !important;
+        font-size: 0.82rem !important;
+        gap: 10px !important;
+      }
+      .image-zoom-hint {
+        padding: 3px 8px !important;
+        font-size: 0.72rem !important;
       }
 
       .tool-title {
@@ -3423,7 +3454,7 @@
                   <img src="docs/risk_qr%2301.png" alt="登录要求手机扫描二维码" loading="lazy" onerror="handleImgError(this, 'docs/risk_qr#01.png')">
                 </div>
                 <div class="image-caption-bar">
-                  <span style="color: #dc2626; font-weight: 600;">症状图 1 · 登录后强制要求手机扫码</span>
+                  <span style="color: #dc2626; font-weight: 600;">图 1 · 登录后强制要求手机扫码</span>
                   <span class="image-zoom-hint">点击看大图</span>
                 </div>
               </div>
@@ -3433,7 +3464,7 @@
                   <img src="docs/risk_qr%2302.png" alt="手机扫码后提示无法验证您的信息" loading="lazy" onerror="handleImgError(this, 'docs/risk_qr#02.png')">
                 </div>
                 <div class="image-caption-bar">
-                  <span style="color: #dc2626; font-weight: 600;">症状图 2 · 手机扫码后无法验证（卡死）</span>
+                  <span style="color: #dc2626; font-weight: 600;">图 2 · 手机扫码后提示无法验证</span>
                   <span class="image-zoom-hint">点击看大图</span>
                 </div>
               </div>
@@ -3443,7 +3474,7 @@
           <!-- Stage B: 3-Step Actionable Resolution -->
           <div class="risk-stage-box" style="background: rgba(37, 99, 235, 0.04); border-color: rgba(37, 99, 235, 0.25);">
             <span class="risk-block-label tag-blue" style="margin-bottom: 6px;">🛠️ 第二步：实测有效的 3 步解封方案</span>
-            <div class="risk-steps-list">
+            <div class="risk-steps-list" style="margin-bottom: 0;">
               <div class="risk-step-item">
                 <span class="risk-step-num">⏳ 第 1 步 · 冷静等待</span>
                 <h5>停止操作，静置等待 3 ~ 5 天</h5>
@@ -3466,22 +3497,20 @@
                 </p>
               </div>
             </div>
+          </div>
 
-            <!-- Stage C: Recovery Result Screenshot -->
-            <div class="risk-stage-box success-stage">
-              <span class="risk-block-label risk-label-success">✅ 第三步：解封恢复后的登录界面示范（图 3）</span>
-              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.65; margin-bottom: 12px;">
-                等待 3~5 天并更换干净住宅 IP 重新登录后，系统页面将如<strong>图 3</strong> 所示出现<strong>“选择一种方法进行验证”</strong>。此时直接选择<strong>【扫描二维码】</strong>，按提示用手机扫码确认即可顺利进入账号！
-              </p>
+          <!-- Stage C: Recovery Result Screenshot (Flat sibling box, no double border nesting!) -->
+          <div class="risk-stage-box success-stage">
+            <span class="risk-block-label risk-label-success">✅ 第三步：解封恢复后的登录界面示范（图 3）</span>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.65; margin-bottom: 12px;">
+              等待 3~5 天并更换干净住宅 IP 重新登录后，系统页面将如<strong>图 3</strong> 所示出现<strong>“选择一种方法进行验证”</strong>。此时直接选择<strong>【扫描二维码】</strong>，按提示用手机扫码确认即可顺利进入账号！
+            </p>
 
-              <div class="image-preview-card" style="max-width: 720px; margin: 0 auto;" onclick="openLightbox('docs/risk_qr%2303.png', '恢复图 3：更换住宅 IP 重新登录后直接出现方法选择，选择扫描二维码即可成功登录')">
-                <div class="risk-img-frame" style="height: 260px;">
-                  <img src="docs/risk_qr%2303.png" alt="选择扫描二维码验证方式后成功登录" loading="lazy" onerror="handleImgError(this, 'docs/risk_qr#03.png')">
-                </div>
-                <div class="image-caption-bar">
-                  <span style="color: #15803d; font-weight: 600;">恢复图 3 · 出现选项后选择【扫描二维码】，手机扫码即成功登录</span>
-                  <span class="image-zoom-hint">点击看大图</span>
-                </div>
+            <div class="image-preview-card" style="max-width: 720px; margin: 12px auto 0;" onclick="openLightbox('docs/risk_qr%2303.png', '恢复图 3：更换住宅 IP 重新登录后直接出现方法选择，选择扫描二维码即可成功登录')">
+              <img src="docs/risk_qr%2303.png" alt="选择扫描二维码验证方式后成功登录" loading="lazy" onerror="handleImgError(this, 'docs/risk_qr#03.png')">
+              <div class="image-caption-bar">
+                <span style="color: #15803d; font-weight: 600;">图 3 · 换住宅 IP 选【扫描二维码】即可登录</span>
+                <span class="image-zoom-hint">点击看大图</span>
               </div>
             </div>
           </div>
