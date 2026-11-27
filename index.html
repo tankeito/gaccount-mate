@@ -1375,6 +1375,152 @@
       background: rgba(234, 88, 12, 0.2);
     }
 
+    /* Disabled Account Appeal Guide & Interactive Templates */
+    .appeal-card {
+      margin-top: 28px;
+      background: var(--card-bg);
+      border: 2px solid #d97706;
+      border-radius: var(--radius-lg);
+      padding: 26px 28px;
+      box-shadow: 0 8px 24px rgba(217, 119, 6, 0.08);
+    }
+    body.dark .appeal-card {
+      border-color: #b45309;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+    .appeal-tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin: 16px 0 20px;
+    }
+    .appeal-tip-item {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      font-size: 0.86rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+    .appeal-tip-item strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 4px;
+      font-size: 0.9rem;
+    }
+    .appeal-workbench {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+    }
+    .appeal-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .appeal-tab-btn {
+      background: var(--card-bg);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      padding: 8px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .appeal-tab-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+    .appeal-tab-btn.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+      box-shadow: 0 2px 6px rgba(26, 115, 232, 0.25);
+    }
+    .appeal-meta-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+      font-size: 0.82rem;
+    }
+    .appeal-counter {
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      background: var(--success-light);
+      color: var(--success);
+    }
+    .appeal-counter.over-limit {
+      background: var(--danger-light);
+      color: var(--danger);
+    }
+    .appeal-textarea {
+      width: 100%;
+      min-height: 230px;
+      padding: 14px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--card-bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 0.9rem;
+      line-height: 1.65;
+      resize: vertical;
+      outline: none;
+      transition: var(--transition);
+    }
+    .appeal-textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px var(--primary-light);
+    }
+    .appeal-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+    .btn-copy-appeal {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: var(--radius-md);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition);
+    }
+    .btn-copy-appeal:hover {
+      background: var(--primary-hover);
+    }
+    .btn-reset-appeal {
+      background: var(--card-bg);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      padding: 10px 16px;
+      border-radius: var(--radius-md);
+      font-size: 0.86rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .btn-reset-appeal:hover {
+      border-color: var(--text-secondary);
+      color: var(--text);
+    }
+
     /* Warranty & Disclaimer Box */
     .care-disclaimer-box {
       margin-top: 24px;
@@ -2052,6 +2198,7 @@
       .step-card,
       .explain-card,
       .risk-unblock-card,
+      .appeal-card,
       .care-formula-card,
       .care-timeline-wrap {
         padding: 16px 14px !important;
@@ -2059,6 +2206,19 @@
         margin-bottom: 16px !important;
         width: 100% !important;
         max-width: 100% !important;
+      }
+
+      .appeal-workbench {
+        padding: 14px 12px !important;
+      }
+      .appeal-tab-btn {
+        width: 100% !important;
+        text-align: center !important;
+      }
+      .btn-copy-appeal,
+      .btn-reset-appeal {
+        width: 100% !important;
+        justify-content: center !important;
       }
 
       .risk-stage-box {
@@ -3657,7 +3817,78 @@
           </div>
         </div>
 
-        <!-- 5. Security & Usage Reminder Notice -->
+        <!-- 5. Disabled Account Appeal Guide & Interactive Templates -->
+        <div id="appealGuide" class="appeal-card">
+          <div class="risk-unblock-header">
+            <div class="risk-unblock-icon" style="background: #fef3c7; color: #d97706;">⚖️</div>
+            <div>
+              <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <h3 style="font-size: 1.18rem; font-weight: 800; color: var(--text); margin: 0;">
+                  账号停用申诉指南：提示“似乎是与多个其他账号一起创建或使用的”怎么办？
+                </h3>
+                <span class="step-action-tag tag-amber" style="font-size: 0.76rem;">限 1,000 字符内 · 附可直接复制模板</span>
+              </div>
+              <p style="font-size: 0.92rem; color: var(--text-secondary); margin-top: 6px; line-height: 1.6;">
+                若账号登录时直接显示下图停用界面，通常是因为共享代理节点或动态 IP 触发了 Google 的批量关联误判。在系统标注的最终删除日期前，您均可通过右下角<strong>【发起申诉】</strong>申请人工复核恢复！
+              </p>
+            </div>
+          </div>
+
+          <div class="image-preview-card" style="max-width: 680px; margin: 12px auto 18px;" onclick="openLightbox('docs/risk_disabled%2301.png', '账号停用提示页面：点击右下角发起申诉提交说明')">
+            <img src="docs/risk_disabled%2301.png" alt="Google 账号停用申诉界面" loading="lazy" onerror="handleImgError(this, 'docs/risk_disabled#01.png')">
+            <div class="image-caption-bar">
+              <span style="color: #b45309; font-weight: 600;">停用提示页 · 先可备份数据，再点【发起申诉】</span>
+              <span class="image-zoom-hint">点击看大图</span>
+            </div>
+          </div>
+
+          <div class="appeal-tips-grid">
+            <div class="appeal-tip-item">
+              <strong>📏 1. 严控 1,000 字符上限</strong>
+              Google 申诉文本框限制最多 <strong>1,000 个字符（包含空格与换行）</strong>。下方 3 篇示例均控制在安全范围内并配实时统计，超出将无法提交。
+            </div>
+            <div class="appeal-tip-item">
+              <strong>🌐 2. 提交前换干净网络</strong>
+              点击【发起申诉】前，尽量先切换到纯净稳定的住宅 IP 或固定网络环境再填写提交，减少系统二次风控概率。
+            </div>
+            <div class="appeal-tip-item">
+              <strong>✏️ 3. 建议优先英文 &amp; 轻度改写</strong>
+              英文申诉通常更利于人工复核团队快速理解；建议下方微调 1~2 处自己的具体使用场景（如工作、学习或个人兴趣），避免千人一面。
+            </div>
+            <div class="appeal-tip-item">
+              <strong>🛡️ 4. 如实诚恳，避开禁用词</strong>
+              重点说明“由本人手工日常使用、因共享/动态网络 IP 引起误判，愿配合验证”，切勿提及自动化工具或异常批量操作。
+            </div>
+          </div>
+
+          <!-- Interactive Appeal Workbench -->
+          <div class="appeal-workbench">
+            <div class="appeal-tabs" role="tablist">
+              <button type="button" class="appeal-tab-btn active" data-template="en_personal">📝 示例 A · 英文日常个人版（推荐）</button>
+              <button type="button" class="appeal-tab-btn" data-template="en_work">💼 示例 B · 英文办公学习版</button>
+              <button type="button" class="appeal-tab-btn" data-template="zh_cn">🇨🇳 示例 C · 简体中文直通版</button>
+            </div>
+
+            <div class="appeal-meta-bar">
+              <span style="color: var(--text-secondary);">可直接点击下方文本框微调内容，确认未超字数后复制提交：</span>
+              <span id="appealCharCount" class="appeal-counter">当前字数：887 / 1,000（含空格与换行 · ✅ 符合限制）</span>
+            </div>
+
+            <textarea id="appealTextarea" class="appeal-textarea" spellcheck="true" aria-label="申诉文本示例编辑框"></textarea>
+
+            <div class="appeal-actions">
+              <button type="button" class="btn-copy-appeal" id="btnCopyAppeal">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                一键复制申诉文本
+              </button>
+              <button type="button" class="btn-reset-appeal" id="btnResetAppeal">
+                ↺ 恢复当前模板原文
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Security & Usage Reminder Notice -->
         <div class="care-disclaimer-box">
           <div class="care-disclaimer-header">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
@@ -3749,6 +3980,16 @@
             </div>
             <div class="faq-answer">
               这是由于当前代理节点 IP 被 Google 临时风控拦截，切勿当天频繁尝试登录。<strong>实测有效的解封步骤：</strong>① 立即停止操作，静置等待 <strong>3~5 天</strong>；② 换用一条<strong>干净纯净的住宅 IP（Residential IP）</strong>重新输入账号密码登录；③ 此时页面将变为“选择一种方法进行验证”（不再死锁），直接选择<strong>【扫描二维码】</strong>并用手机扫码即可成功登录！详细图文对照请点击查看：<a href="#riskQrGuide" style="color:var(--primary); font-weight:600;">【登录扫码风控排错指南】</a>。
+            </div>
+          </div>
+
+          <div class="faq-card">
+            <div class="faq-question">
+              <span>Q8：账号被停用并提示“似乎是与多个其他账号一起创建或使用的”，如何提交申诉？</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+            <div class="faq-answer">
+              这通常是共享代理节点或动态 IP 引发的误判。可先点击页面上的【下载您的数据】备份资料，再切换至纯净网络点击<strong>【发起申诉】</strong>。申诉框限制最多 <strong>1,000 个字符（含空格与换行）</strong>，请直接前往上方的 <a href="#appealGuide" style="color:var(--primary); font-weight:600;">【账号停用申诉指南】</a>，选用内置的中英文模板并结合自身使用场景微调后提交人工复核。
             </div>
           </div>
         </div>
@@ -4404,6 +4645,106 @@
         lightboxModal.classList.remove('active');
       }
     });
+
+    // Appeal Templates Controller (< 1,000 chars incl. spaces & newlines)
+    const APPEAL_TEMPLATES = {
+      en_personal: `Hello Google Support Team,
+
+My Google account was recently disabled with a message stating it appeared to be created or used with multiple other accounts or by a bot. I believe this is an automated false positive.
+
+This account is used solely by me personally as a real individual, never by any bot, script, or automated program. My internet connection uses an ISP dynamic shared IP address, and I occasionally switch between home Wi-Fi, office networks, and mobile data, which may have caused unrelated users on the same public IP pool to trigger your multi-account filter.
+
+I only use this account for regular personal emails, YouTube, and everyday Google services, and I have never sent spam or abused any policy. I am glad to complete phone or extra verification if required.
+
+Could you please review my account manually and restore access? Thank you very much for your help!`,
+      en_work: `Dear Google Account Review Team,
+
+I am writing to respectfully appeal the suspension of my Google account. The notice suggests the account may have been associated with automated creation or multiple accounts, which is a misunderstanding.
+
+I am an individual user relying on this account for daily personal communication, study notes, Google Drive documents, and educational videos on YouTube. Because my local broadband provider assigns shared carrier-grade NAT IPs and I access my account across different daily locations, the network shifts likely triggered an unintended security alert.
+
+I have never used automation tools, bulk scripts, or multiple accounts for policy abuse. All actions on this account have been performed manually in full compliance with Google's Terms of Service.
+
+Please re-evaluate my account and reinstate access. I truly appreciate your time and assistance.`,
+      zh_cn: `尊敬的 Google 审核团队：
+
+您好！我的 Google 账号近期收到停用提示，系统怀疑该账号与多个其他账号关联或由计算机程序创建。这完全是一次自动化误判。
+
+此账号仅由我本人亲自使用，从未借助任何机器人、脚本或自动化工具进行操作。由于我日常使用的网络属于运营商动态共享 IP（且常在家庭宽带、公司网络与手机热点间切换），同一出口 IP 下可能存在其他陌生用户，导致系统误认为存在多账号关联或异常行为。
+
+平时我仅将该账号用于个人正常收发邮件、观看 YouTube 视频、查阅资料以及 Google 云端硬盘存用文件，从未发送任何垃圾邮件或违反 Google 政策。今后我也将尽量保持稳定的设备与网络环境使用。
+
+恳请审核团队进行人工复核，协助解除停用并恢复账号访问权限，如需要手机短信或额外验证我也愿意积极配合。非常感谢！`
+    };
+
+    let currentAppealKey = 'en_personal';
+    const appealTextarea = document.getElementById('appealTextarea');
+    const appealCharCount = document.getElementById('appealCharCount');
+    const appealTabBtns = document.querySelectorAll('.appeal-tab-btn');
+    const btnCopyAppeal = document.getElementById('btnCopyAppeal');
+    const btnResetAppeal = document.getElementById('btnResetAppeal');
+
+    function updateAppealCounter() {
+      if (!appealTextarea || !appealCharCount) return;
+      // Count newlines conservatively as CRLF (2 chars) so limit never overflows on submit
+      const normalizedLen = appealTextarea.value.replace(/\r?\n/g, '\r\n').length;
+      if (normalizedLen > 1000) {
+        appealCharCount.classList.add('over-limit');
+        appealCharCount.textContent = `当前字数：${normalizedLen} / 1,000（⚠️ 已超出 ${normalizedLen - 1000} 字符，请精简）`;
+      } else {
+        appealCharCount.classList.remove('over-limit');
+        appealCharCount.textContent = `当前字数：${normalizedLen} / 1,000（含空格与换行 · ✅ 符合限制）`;
+      }
+    }
+
+    if (appealTextarea) {
+      appealTextarea.value = APPEAL_TEMPLATES[currentAppealKey];
+      updateAppealCounter();
+      appealTextarea.addEventListener('input', updateAppealCounter);
+    }
+
+    appealTabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key = btn.getAttribute('data-template');
+        if (!key || !APPEAL_TEMPLATES[key]) return;
+        currentAppealKey = key;
+        appealTabBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        if (appealTextarea) {
+          appealTextarea.value = APPEAL_TEMPLATES[key];
+          updateAppealCounter();
+        }
+      });
+    });
+
+    if (btnCopyAppeal) {
+      btnCopyAppeal.addEventListener('click', () => {
+        if (!appealTextarea) return;
+        const text = appealTextarea.value.trim();
+        const len = text.replace(/\r?\n/g, '\r\n').length;
+        if (!text) {
+          showToast('申诉内容不能为空');
+          return;
+        }
+        if (len > 1000) {
+          showToast(`当前已 ${len} 字符，建议精简到 1,000 字符内再提交`);
+        }
+        navigator.clipboard.writeText(text).then(() => {
+          showToast(`申诉文本已复制（${len} 字符）！`);
+        }).catch(() => {
+          fallbackCopy(text, `申诉文本（${len} 字符）`);
+        });
+      });
+    }
+
+    if (btnResetAppeal) {
+      btnResetAppeal.addEventListener('click', () => {
+        if (!appealTextarea) return;
+        appealTextarea.value = APPEAL_TEMPLATES[currentAppealKey];
+        updateAppealCounter();
+        showToast('已恢复当前模板默认文本');
+      });
+    }
 
     // Fallback image error handler
     window.handleImgError = function(img, fallbackPath) {
