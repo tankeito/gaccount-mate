@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Google (Gmail) 账号登录与安全换绑保姆级指引</title>
-  <meta name="description" content="Gmail 账号登录、2FA 双重身份验证接码、修改密码、换绑手机与辅助邮箱全流程图文对照指南。">
+  <meta name="description" content="Gmail 账号登录、2FA 双重身份验证获取验证码、修改密码、绑定手机与辅助邮箱全流程图文对照指南。">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%20width=%22100%22%20height=%22100%22><text y=%22.9em%22 font-size=%2290%22>📧</text></svg>">
   <style>
     /* CSS Variables & Theme */
@@ -77,6 +77,7 @@
       max-width: 100vw;
       overflow-x: hidden;
       position: relative;
+      padding-top: 70px;
     }
 
     /* Prevent any long words/code/urls from overflowing viewport */
@@ -97,12 +98,12 @@
     /* Top Progress Bar */
     #scrollProgress {
       position: fixed;
-      top: 0;
+      top: 68px;
       left: 0;
       height: 3px;
       background: linear-gradient(90deg, #4285f4, #34a853, #fbbc05, #ea4335);
       width: 0%;
-      z-index: 999;
+      z-index: 1001;
       transition: width 0.1s linear;
     }
 
@@ -113,19 +114,25 @@
       padding: 0 20px;
     }
 
-    /* Header */
+    /* Header (Always fixed at top across Desktop & Mobile) */
     header {
       background: var(--card-bg);
       border-bottom: 1px solid var(--border);
-      position: sticky;
+      position: fixed;
       top: 0;
-      z-index: 100;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 1000;
       backdrop-filter: blur(12px);
-      background-color: rgba(255, 255, 255, 0.92);
+      -webkit-backdrop-filter: blur(12px);
+      background-color: rgba(255, 255, 255, 0.94);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
       transition: var(--transition);
     }
     body.dark header {
-      background-color: rgba(21, 29, 46, 0.92);
+      background-color: rgba(21, 29, 46, 0.94);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     }
 
     .header-inner {
@@ -2446,6 +2453,7 @@
       body {
         background: #fff !important;
         color: #000 !important;
+        padding-top: 0 !important;
       }
       .step-card, .tool-box {
         box-shadow: none !important;
@@ -2478,9 +2486,9 @@
       </a>
 
       <nav class="nav-links">
-        <a href="#toolSection" class="nav-link">卡密解析 & 接码</a>
+        <a href="#toolSection" class="nav-link">凭据解析 & 2FA</a>
         <a href="#loginSection" class="nav-link">登录步骤</a>
-        <a href="#securitySection" class="nav-link">换绑指南</a>
+        <a href="#securitySection" class="nav-link">安全设置</a>
         <a href="#careSection" class="nav-link">养号防封</a>
         <a href="#faqSection" class="nav-link">常见问题</a>
       </nav>
@@ -2523,13 +2531,13 @@
         Google (Gmail) 账号登录与<span>安全设置指南</span>
       </h1>
       <p class="hero-desc">
-        包含账号凭据（卡密）智能拆解、纯本地 2FA 实时接码、全流程登录图解，以及绑定恢复手机、辅助邮箱与更新 2FA 验证器的详细操作步骤。
+        包含账号凭据（账号----密码----2FA）智能拆解、纯本地 2FA 验证码生成、全流程登录图解，以及绑定恢复手机、辅助邮箱与更新 2FA 验证器的详细操作步骤。
       </p>
 
       <div class="hero-tags">
         <span class="tag-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          纯前端本地实时接码
+          纯前端本地算码
         </span>
         <span class="tag-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -2557,7 +2565,7 @@
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
               纯本地安全工具
             </div>
-            <h2 class="tool-title">账号凭据智能拆解 & 2FA 实时接码工作台</h2>
+            <h2 class="tool-title">账号凭据智能拆解 & 2FA 验证码生成器</h2>
             <p class="tool-desc">
               将您的账号凭据文本（格式：<code>账号----密码----2fa</code>）粘贴到下方输入框，自动拆解并实时生成当前 6 位登录验证码。
             </p>
@@ -2571,7 +2579,7 @@
             第一步 · 核心入口
           </div>
           <div class="guide-banner-text">
-            <strong>👉 请将整行账号凭据粘贴在下方输入框中</strong>（格式：<code>账号----密码----2FA密钥</code>），点击【一键拆解接码】即可自动提取账号、密码并生成 6 位实时验证码！
+            <strong>👉 请将整行账号凭据粘贴在下方输入框中</strong>（格式：<code>账号----密码----2FA密钥</code>），点击【一键提取并算码】即可自动提取账号、密码并生成 6 位实时验证码！
           </div>
         </div>
 
@@ -2582,7 +2590,7 @@
                 type="text" 
                 id="rawCardInput" 
                 class="card-input" 
-                placeholder="👈 请在此粘贴您收到的卡密（例如：user_demo@gmail.com----Password123----4bhv klep p2ku bhz2...）"
+                placeholder="👈 请在此粘贴整行账号凭据（例如：user_demo@gmail.com----Password123----4bhv klep p2ku bhz2...）"
                 spellcheck="false"
                 autocomplete="off"
               />
@@ -2597,14 +2605,14 @@
                 <circle cx="11" cy="11" r="8"></circle>
                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
               </svg>
-              一键拆解接码
+              一键提取并算码
             </button>
           </div>
           <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
             <div style="font-size: 0.82rem; color: var(--text-muted); display: flex; align-items: center; gap: 6px;">
-              <span>💡 提示：支持多种卡密分隔符（----、---、| 或空格均可自动识别）</span>
+              <span>💡 提示：支持多种凭据分隔符（----、---、| 或空格均可自动识别）</span>
             </div>
-            <button class="sample-pill-btn" id="btnLoadSample">填入示例卡密快速体验</button>
+            <button class="sample-pill-btn" id="btnLoadSample">填入示例凭据快速体验</button>
           </div>
         </div>
 
@@ -2664,7 +2672,7 @@
           <div class="totp-left">
             <div class="totp-badge">
               <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; animation: pulse 1.5s infinite;"></span>
-              实时动态接码 (每30秒更新)
+              实时 2FA 验证码 (每30秒更新)
             </div>
             <div class="totp-digits-wrap">
               <div class="totp-code" id="liveTotpCode">------</div>
@@ -2689,7 +2697,7 @@
               一键复制当前验证码
             </button>
             <a href="https://2fa.fun/index.html" target="_blank" rel="noopener noreferrer" class="btn-backup-2fa">
-              <span>备用接码站 2fa.fun</span>
+              <span>备用算码工具 2fa.fun</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
             </a>
           </div>
@@ -2697,7 +2705,7 @@
 
         <div class="tool-footer-tip">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-          安全声明：本页面解析与 2FA 算法全部在您的本地浏览器前端离线运行，绝不会向任何服务器上传您的卡密数据。
+          安全声明：本页面解析与 2FA 算法全部在您的本地浏览器前端离线运行，绝不会向任何服务器上传您的账号信息。
         </div>
 
         <!-- 30-Second Guide to 2FA -->
@@ -2711,9 +2719,9 @@
           <div class="explain-grid">
             <div class="explain-item">
               <div class="explain-item-icon">🔐</div>
-              <h4 class="explain-item-title">卡密第三段是什么？</h4>
+              <h4 class="explain-item-title">凭据第三段是什么？</h4>
               <p class="explain-item-text">
-                卡密格式为 <code>账号----密码----2fa密钥</code>。第三段类似 <code>4bhv klep ...</code> 的字符是 Google 身份验证器的种子密钥，不是固定密码。
+                标准格式为 <code>账号----密码----2fa密钥</code>。第三段类似 <code>4bhv klep ...</code> 的字符是 Google 身份验证器的种子密钥，不是固定密码。
               </p>
             </div>
             <div class="explain-item">
@@ -2791,7 +2799,7 @@
             <div class="step-header-text">
               <h3 class="step-title">输入邮箱账号</h3>
               <p class="step-instruction">
-                在登录页面的“邮箱或电话号码”输入框中，填入卡密第 1 段完整的 Gmail 地址，然后点击【下一步】。
+                在登录页面的“邮箱或电话号码”输入框中，填入凭据第 1 段完整的 Gmail 地址，然后点击【下一步】。
               </p>
               <span class="step-action-tag tag-blue">输入邮箱账号 → 点击下一步</span>
             </div>
@@ -2800,7 +2808,7 @@
           <ul class="keynotes-list">
             <li class="keynotes-item">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>请直接点击本页上方【卡密拆解】卡片中的“一键复制邮箱”填入，防止带入首尾空格。</span>
+              <span>请直接点击本页上方【账号凭据拆解】卡片中的“一键复制邮箱”填入，防止带入首尾空格。</span>
             </li>
           </ul>
 
@@ -2820,7 +2828,7 @@
             <div class="step-header-text">
               <h3 class="step-title">输入邮箱密码</h3>
               <p class="step-instruction">
-                在“输入您的密码”框中，输入卡密中的第 2 段密码，然后点击【下一步】。
+                在“输入您的密码”框中，输入凭据中的第 2 段密码，然后点击【下一步】。
               </p>
               <span class="step-action-tag tag-blue">输入密码 → 点击下一步</span>
             </div>
@@ -2836,7 +2844,7 @@
           <div class="image-preview-card" onclick="openLightbox('docs/google_login%2303.png', '步骤 1.3：输入邮箱登录密码')">
             <img src="docs/google_login%2303.png" alt="输入邮箱密码" loading="lazy" onerror="handleImgError(this, 'docs/google_login#03.png')">
             <div class="image-caption-bar">
-              <span>输入卡密中的密码并点击下一步</span>
+              <span>输入登录密码并点击下一步</span>
               <span class="image-zoom-hint">点击查看大图</span>
             </div>
           </div>
@@ -2856,10 +2864,10 @@
           </div>
 
           <div class="explain-item" style="margin-bottom: 16px;">
-            <div style="font-weight: 700; margin-bottom: 6px; color: var(--text);">接码获取方式（两种途径均可）：</div>
+            <div style="font-weight: 700; margin-bottom: 6px; color: var(--text);">验证码获取方式（两种途径均可）：</div>
             <ol style="margin-left: 20px; font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7;">
               <li><strong>途径 A（最快捷）：</strong>直接点击本页顶部的【<a href="#toolSection" style="color:var(--primary); font-weight:700;">一键复制当前验证码</a>】按钮。</li>
-              <li><strong>途径 B（备用第三方）：</strong>访问接码网址 <a href="https://2fa.fun/index.html" target="_blank" rel="noopener noreferrer" style="color:var(--primary); font-weight:600;">https://2fa.fun/index.html</a>，粘贴卡密第 3 段 2FA 密钥，点击【获取验证码】，并点击【复制】（如下图右侧示范）。</li>
+              <li><strong>途径 B（备用第三方）：</strong>访问在线算码工具 <a href="https://2fa.fun/index.html" target="_blank" rel="noopener noreferrer" style="color:var(--primary); font-weight:600;">https://2fa.fun/index.html</a>，粘贴第 3 段 2FA 密钥，点击【获取验证码】，并点击【复制】（如下图右侧示范）。</li>
             </ol>
           </div>
 
@@ -2879,8 +2887,8 @@
               </div>
             </div>
 
-            <div class="image-preview-card" onclick="openLightbox('docs/2fa%2301.png', '步骤 1.4.2：在 2fa.fun 接码平台获取验证码示范')">
-              <img src="docs/2fa%2301.png" alt="2fa.fun 接码获取" loading="lazy" onerror="handleImgError(this, 'docs/2fa#01.png')">
+            <div class="image-preview-card" onclick="openLightbox('docs/2fa%2301.png', '步骤 1.4.2：在 2fa.fun 在线算码工具获取验证码示范')">
+              <img src="docs/2fa%2301.png" alt="2fa.fun 获取验证码" loading="lazy" onerror="handleImgError(this, 'docs/2fa#01.png')">
               <div class="image-caption-bar">
                 <span>输入 2FA 密钥获取 6 位数代码并复制</span>
                 <span class="image-zoom-hint">大图</span>
@@ -3108,7 +3116,7 @@
               2.1.3 & 2.1.4：敏感操作二次验证 & 切换文本密钥
             </h4>
             <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 12px;">
-              Google 为了账户安全，在修改关键信息时会弹出 <strong>Verify it's you</strong>（验证是您本人）。此时用<strong>原来收到的旧 2FA 密钥</strong>在顶部接码器中获取最新验证码填入并提交。通过后会弹出二维码窗口，点击蓝色的<strong>【无法扫描？】</strong>文字。
+              Google 为了账户安全，在修改关键信息时会弹出 <strong>Verify it's you</strong>（验证是您本人）。此时用<strong>原有的旧 2FA 密钥</strong>在顶部验证码生成器中获取最新验证码填入并提交。通过后会弹出二维码窗口，点击蓝色的<strong>【无法扫描？】</strong>文字。
             </p>
 
             <div class="dual-images-grid">
@@ -3150,7 +3158,7 @@
               </div>
 
               <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 12px;">
-                对照下方图 11 红框位置，复制属于您的全新 2FA 密钥。复制好后，<strong>直接粘贴到紧随其下的【专属换绑辅助工具】中</strong>，系统将即刻为您生成第 2.1.6 步所需的 6 位验证码，并自动为您合成最新卡密！
+                对照下方图 11 红框位置，复制属于您的全新 2FA 密钥。复制好后，<strong>直接粘贴到紧随其下的【专属辅助工具】中</strong>，系统将即刻为您生成第 2.1.6 步所需的 6 位验证码，并自动为您合成最新账号凭据！
               </p>
 
               <!-- Image 11: Displayed Prominently First -->
@@ -3169,9 +3177,9 @@
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
                 步骤 2.1.5 ➔ 2.1.6 专属辅助工具
               </div>
-              <h4 class="new-2fa-title">在此粘贴新密钥 ➔ 实时生成 2.1.6 验证码 ➔ 一键备份新卡密！</h4>
+              <h4 class="new-2fa-title">在此粘贴新密钥 ➔ 实时生成 2.1.6 验证码 ➔ 一键备份新凭据！</h4>
               <p class="new-2fa-desc">
-                将刚刚在<strong>上方图 11 红框</strong>复制出的全新 2FA 密钥粘贴到下方，系统将<strong>自动实时计算出 6 位验证码</strong>（用于下方步骤 2.1.6 校验），并为您自动合成最新卡密以供复制或下载保存。
+                将刚刚在<strong>上方图 11 红框</strong>复制出的全新 2FA 密钥粘贴到下方，系统将<strong>自动实时计算出 6 位验证码</strong>（用于下方步骤 2.1.6 校验），并为您自动合成最新账号凭据以供复制或下载保存。
               </p>
 
               <!-- Step 1: Input New Secret -->
@@ -3216,7 +3224,7 @@
               <div class="new-card-export-box">
                 <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
                   <span style="font-size: 0.85rem; font-weight: 700; color: #fde68a;">
-                    ③ 换绑成功！最新卡密已自动合成（请务必复制或下载存档）：
+                    ③ 更新成功！最新账号凭据已自动合成（请务必复制或下载存档）：
                   </span>
                   <span style="font-size: 0.75rem; color: #94a3b8;">标准格式：账号----密码----新2FA密钥</span>
                 </div>
@@ -3226,11 +3234,11 @@
                 <div class="new-card-actions">
                   <button class="btn-copy-new-card" id="btnCopyNewCard">
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                    复制最新完整卡密
+                    复制最新完整凭据
                   </button>
                   <button class="btn-download-txt" id="btnDownloadTxt">
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                    下载卡密 TXT 文本文件保存
+                    下载凭据 TXT 文本文件保存
                   </button>
                 </div>
               </div>
@@ -4233,7 +4241,7 @@
 
     function applyParsedAccount(acc, showNotification = true) {
       if (!acc) {
-        if (showNotification) showToast('无法解析此卡密格式，请检查');
+        if (showNotification) showToast('无法解析此凭据格式，请检查');
         return;
       }
       currentAccount = acc;
@@ -4243,7 +4251,7 @@
       updateTotpNow();
       updateNewCardPreview(newSecretInput ? newSecretInput.value.trim() : '');
       if (showNotification) {
-        showToast('卡密已拆解！已自动接入实时计算');
+        showToast('账号凭据已拆解！已自动接入实时算码');
       }
     }
 
@@ -4294,9 +4302,9 @@
       btnClearInput.addEventListener('click', () => {
         rawCardInput.value = '';
         currentAccount = { email: '', password: '', secret: '' };
-        valEmail.textContent = '等待输入卡密...';
-        valPwd.textContent = '等待输入卡密...';
-        valSecret.textContent = '等待输入卡密...';
+        valEmail.textContent = '等待输入凭据...';
+        valPwd.textContent = '等待输入凭据...';
+        valSecret.textContent = '等待输入凭据...';
         liveTotpCode.textContent = '------';
         stickyTotpVal.textContent = '------';
         updateNewCardPreview(newSecretInput ? newSecretInput.value.trim() : '');
@@ -4319,7 +4327,7 @@
           if (acc) {
             applyParsedAccount(acc, true);
           } else {
-            showToast('已粘贴内容，请点击【一键拆解接码】解析');
+            showToast('已粘贴内容，请点击【一键提取并算码】解析');
           }
         } catch (err) {
           rawCardInput.focus();
@@ -4422,9 +4430,9 @@
         const pwd = currentAccount.password || 'password123';
         const cardStr = `${email}----${pwd}----${rawNewSecret}`;
         navigator.clipboard.writeText(cardStr).then(() => {
-          showToast('最新完整卡密已复制到剪贴板！');
+          showToast('最新完整凭据已复制到剪贴板！');
         }).catch(() => {
-          fallbackCopy(cardStr, '最新完整卡密');
+          fallbackCopy(cardStr, '最新完整凭据');
         });
       });
     }
@@ -4444,7 +4452,7 @@
         const fileContent = `${cardStr}
 
 # ===================================================
-# Google Gmail 账号安全凭证 (全新 2FA 换绑存档)
+# Google Gmail 账号安全凭据 (全新 2FA 备份存档)
 # ===================================================
 # 邮箱账号: ${email}
 # 邮箱密码: ${pwd}
@@ -4452,8 +4460,8 @@
 # 保存时间: ${nowStr}
 # 
 # 【使用说明】
-# 1. 第一行为标准卡密格式：账号----密码----2FA密钥
-# 2. 备用 2FA 在线接码地址: https://2fa.fun/index.html
+# 1. 第一行为标准凭据格式：账号----密码----2FA密钥
+# 2. 备用 2FA 在线算码地址: https://2fa.fun/index.html
 # 3. 请妥善保管此文件，切勿泄露给他人！
 # ===================================================`;
 
@@ -4461,13 +4469,13 @@
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         const safePrefix = (currentAccount.email ? currentAccount.email.split('@')[0] : 'gmail').replace(/[^a-zA-Z0-9_\-]/g, '_');
-        a.download = `gmail_${safePrefix}_new_card.txt`;
+        a.download = `gmail_${safePrefix}_backup.txt`;
         a.href = url;
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
         URL.revokeObjectURL(url);
-        showToast('已开始下载卡密 TXT 文本！');
+        showToast('已开始下载凭据 TXT 文本！');
       });
     }
 
@@ -4535,7 +4543,7 @@
       }
 
       if (!text || text.includes('等待') || text.includes('未识别')) {
-        showToast('请先输入并拆解有效卡密');
+        showToast('请先输入并拆解有效凭据');
         return;
       }
       navigator.clipboard.writeText(text).then(() => {
@@ -4548,7 +4556,7 @@
     function copyCurrentTotp() {
       const text = liveTotpCode.textContent.replace(/\s/g, '');
       if (!text || text.includes('-') || text.includes('错误')) {
-        showToast('请先解析包含 2FA 密钥的卡密');
+        showToast('请先解析包含 2FA 密钥的凭据');
         return;
       }
       navigator.clipboard.writeText(text).then(() => {
